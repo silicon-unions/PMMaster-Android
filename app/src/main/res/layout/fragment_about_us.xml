@@ -1,0 +1,37 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="The professional engineers for training and education (PE) is one of the leading companies in the Middle East. Its seven-year career includes providing training services to several governments and private entities including Saudi Engineers Console, Electricity Company, Aramco, Almarai, Al Rajhi Bank, etc.), have Credit and partnerships with local and international universities such as the American University of Kansas, the Arab Academy for Science and Technology, the Australian Institute of Higher Education, the University of Nottingham, the Arab Open University, Buraidah Colleges, etc.) and through our expertise and partnerships; we provide this mobile application wishing to gain your satisfaction.
+For more information about what we provide for training and education services kindly, visit our website: www.professionalengineers.us"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="CEO\n
+Ahmed Alsenosy\n
+Gm@professionalengineers.us\n
+00966563444456"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</ScrollView>

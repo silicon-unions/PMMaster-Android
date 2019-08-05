@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codesignet.pmp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".app.PmpApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <receiver android:name="com.allyants.notifyme.NotificationPublisher" />
+        <receiver android:name="com.allyants.notifyme.BootNotifyMe">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".home.ui.activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenAppTheme" />
+        <activity
+            android:name=".Authentication.ui.activity.LoginActivity"
+            android:theme="@style/FullScreenAppTheme" />
+        <activity
+            android:name=".Authentication.ui.activity.SignUpActivity"
+            android:theme="@style/FullScreenAppTheme" />
+        <activity
+            android:name=".Authentication.ui.activity.ForgerPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenAppTheme" />
+        <activity
+            android:name=".exam.ui.fragments.ExamFragment"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenAppTheme" />
+        <activity
+            android:name=".exam.ui.activity.ExamOptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenAppTheme" />
+        <activity
+            android:name=".notes.ui.activity.NotesScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ask_instructor.ui.activity.AskScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".profile.ui.activity.ProfileActivityScreen"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".statistics.StatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".exam.ui.activity.ExamReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".practices.ui.activities.PracticesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".exam.ui.activity.ExamHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".practices.ui.activities.PracticesLevelsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".practices.ui.activities.PracticeOptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".practices.ui.activities.PracticesDownloadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChooseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.ui.activity.TodayExamDataActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
