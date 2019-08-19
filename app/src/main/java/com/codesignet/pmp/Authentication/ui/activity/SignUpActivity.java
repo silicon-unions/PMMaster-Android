@@ -37,14 +37,14 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.login.LoginResult;
-import com.linkedin.platform.APIHelper;
-import com.linkedin.platform.LISessionManager;
-import com.linkedin.platform.errors.LIApiError;
-import com.linkedin.platform.errors.LIAuthError;
-import com.linkedin.platform.listeners.ApiListener;
-import com.linkedin.platform.listeners.ApiResponse;
-import com.linkedin.platform.listeners.AuthListener;
-import com.linkedin.platform.utils.Scope;
+//import com.linkedin.platform.APIHelper;
+//import com.linkedin.platform.LISessionManager;
+//import com.linkedin.platform.errors.LIApiError;
+//import com.linkedin.platform.errors.LIAuthError;
+//import com.linkedin.platform.listeners.ApiListener;
+//import com.linkedin.platform.listeners.ApiResponse;
+//import com.linkedin.platform.listeners.AuthListener;
+//import com.linkedin.platform.utils.Scope;
 
 import org.json.JSONObject;
 
@@ -138,29 +138,29 @@ public class SignUpActivity extends BaseActivity<AuthenticationInteractor, Authe
                     }
                 });
 
-        linked_button.setOnClickListener(v->{
-            LISessionManager.getInstance(getApplicationContext())
-                    .init(this, buildScope(), new AuthListener() {
-                        @Override
-                        public void onAuthSuccess() {
-                            Log.i("Hello",LISessionManager
-                                    .getInstance(getApplicationContext())
-                                    .getSession().getAccessToken().toString());
-                            linkededinApiHelper();
-                        }
-
-                        @Override
-                        public void onAuthError(LIAuthError error) {
-                            Log.i("Hello",error.toString());
-                        }
-                    }, true);
-        });
+//        linked_button.setOnClickListener(v->{
+//            LISessionManager.getInstance(getApplicationContext())
+//                    .init(this, buildScope(), new AuthListener() {
+//                        @Override
+//                        public void onAuthSuccess() {
+//                            Log.i("Hello",LISessionManager
+//                                    .getInstance(getApplicationContext())
+//                                    .getSession().getAccessToken().toString());
+//                            linkededinApiHelper();
+//                        }
+//
+//                        @Override
+//                        public void onAuthError(LIAuthError error) {
+//                            Log.i("Hello",error.toString());
+//                        }
+//                    }, true);
+//        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
-        LISessionManager.getInstance(getApplicationContext()).onActivityResult(this, requestCode, resultCode, data);
+//        LISessionManager.getInstance(getApplicationContext()).onActivityResult(this, requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -174,23 +174,23 @@ public class SignUpActivity extends BaseActivity<AuthenticationInteractor, Authe
         loading.setVisibility(View.GONE);
     }
 
-    public void linkededinApiHelper(){
-        String url = "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address)";
-
-        APIHelper apiHelper = APIHelper.getInstance(getApplicationContext());
-        apiHelper.getRequest(this, url, new ApiListener() {
-            @Override
-            public void onApiSuccess(ApiResponse apiResponse) {
-                // Success!\
-                showResult(apiResponse.getResponseDataAsJson());
-            }
-
-            @Override
-            public void onApiError(LIApiError liApiError) {
-                // Error making GET request!
-            }
-        });
-    }
+//    public void linkededinApiHelper(){
+//        String url = "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address)";
+//
+//        APIHelper apiHelper = APIHelper.getInstance(getApplicationContext());
+//        apiHelper.getRequest(this, url, new ApiListener() {
+//            @Override
+//            public void onApiSuccess(ApiResponse apiResponse) {
+//                // Success!\
+//                showResult(apiResponse.getResponseDataAsJson());
+//            }
+//
+//            @Override
+//            public void onApiError(LIApiError liApiError) {
+//                // Error making GET request!
+//            }
+//        });
+//    }
     public  void  showResult(JSONObject response){
         try {
             linkedInsObject.setEmail(response.get("emailAddress").toString());
@@ -203,9 +203,9 @@ public class SignUpActivity extends BaseActivity<AuthenticationInteractor, Authe
         }
     }
 
-    private static Scope buildScope() {
-        return Scope.build(Scope.R_BASICPROFILE, Scope.R_EMAILADDRESS);
-    }
+//    private static Scope buildScope() {
+//        return Scope.build(Scope.R_BASICPROFILE, Scope.R_EMAILADDRESS);
+//    }
 
     @OnClick(R.id.btn_back)
     public void goBack() {
